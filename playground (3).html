@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playground</title>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8f1e8;
+  color: #4a2934;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+.wrap {
+  min-height: 100vh;
+  padding: 28px 7%;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at top left, #f0d9d5 0%, transparent 40%),
+    #f8f1e8;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5d2c8;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.menu {
+  font-size: 13px;
+  color: #98717a;
+}
+
+main {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 65px 0;
+  text-align: center;
+}
+
+.ornament {
+  color: #a65e70;
+  font-size: 25px;
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #a16b76;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 49px);
+  line-height: 1.5;
+  letter-spacing: -2px;
+  margin: 0;
+  font-weight: 700;
+}
+
+h1 span {
+  color: #9d4d63;
+}
+
+.description {
+  color: #866c6b;
+  font-size: 16px;
+  line-height: 2;
+  margin: 24px 0;
+}
+
+.illustration {
+  font-size: 65px;
+  margin: 22px 0;
+}
+
+button {
+  border: none;
+  border-radius: 50px;
+  background: #803e52;
+  color: #fff8f0;
+  padding: 17px 34px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px #803e5225;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #642e40;
+  transform: translateY(-2px);
+}
+
+button span {
+  margin-left: 12px;
+}
+
+.small-text {
+  color: #a18b87;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0 5px;
+  border-top: 1px solid #e5d2c8;
+  color: #a18b87;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 20px 6%;
+  }
+
+  header {
+    align-items: flex-start;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .menu {
+    font-size: 11px;
+    text-align: right;
+  }
+
+  main {
+    padding: 55px 0;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <span class="logo">☁️ 보살 상담소</span>
+    <span class="menu">마음 · 쉼 · 이야기</span>
+  </header>
+
+  <main>
+    <div class="ornament">✿　❀　✿</div>
+
+    <p class="eyebrow">YOUR LITTLE PLACE OF COMFORT</p>
+
+    <h1>
+      오늘의 마음을<br />
+      <span>편안하게 내려놓아요</span>
+    </h1>
+
+    <p class="description">
+      혼자 담아두었던 이야기,<br />
+      이곳에서 천천히 꺼내도 괜찮아요.
+    </p>
+
+    <div class="illustration">🌸</div>
+
+    <button onclick="location.href='#topics'">
+      내 마음 이야기하기 <span>→</span>
+    </button>
+
+    <p class="small-text">당신의 이야기를 천천히 들어드릴게요.</p>
+  </main>
+
+  <footer>보살 상담소 · 마음을 쉬어가는 작은 공간</footer>
+</div>
+
+<script>
+
+const answers = {
+  "연애와 사랑": {
+    title: "사랑 때문에 마음이 복잡하군요.",
+    answer: "좋아하는 마음이 클수록 상대의 말과 행동 하나에도 마음이 흔들릴 수 있어요. 하지만 상대의 마음을 헤아리는 만큼 내 마음도 소중히 살펴봐야 해요. 지금 내가 관계에서 가장 바라는 것이 무엇인지 천천히 생각해 보세요.",
+    question: "지금 그 사람과의 관계에서 가장 마음에 걸리는 건 무엇인가요?"
+  },
+  "인간관계": {
+    title: "사람 사이에서 마음을 많이 쓰고 있군요.",
+    answer: "모든 사람과 잘 지낼 수는 없고, 모두에게 이해받을 필요도 없어요. 상대의 입장을 생각하는 것도 중요하지만 내 감정과 기준을 지키는 것도 중요해요. 무조건 참기보다 내가 불편했던 이유부터 알아보세요.",
+    question: "그 사람과의 관계에서 가장 서운했던 순간은 언제였나요?"
+  },
+  "진로와 일": {
+    title: "앞으로의 방향이 고민되는군요.",
+    answer: "앞으로 무엇을 해야 할지 막막할 때는 남들과 비교하기보다 내가 원하는 삶이 무엇인지 살펴보는 게 도움이 돼요. 지금 당장 완벽한 답을 찾지 않아도 괜찮아요. 작게라도 시작할 수 있는 일부터 하나씩 정해 보세요.",
+    question: "지금 가장 고민되는 건 진로 선택인가요, 일에 대한 부담인가요?"
+  },
+  "가족 이야기": {
+    title: "가족이라서 더 말하기 어려웠을 수 있겠어요.",
+    answer: "가까운 사이일수록 서로를 이해하기 어렵고, 서운함도 깊어질 수 있어요. 가족이라고 해서 모든 감정을 혼자 참아야 하는 건 아니에요. 내 마음을 차분하게 돌아보고, 내가 바라는 점을 정리해 보는 것부터 시작해도 좋아요.",
+    question: "가족에게 가장 바라는 것은 무엇인가요?"
+  },
+  "나 자신에 대한 고민": {
+    title: "스스로에게 조금 지쳐 있었을지도 모르겠어요.",
+    answer: "다른 사람에게는 괜찮다고 말하면서 정작 자신에게는 엄격해질 때가 있어요. 부족한 점만 바라보기보다 지금까지 버텨 온 나의 모습도 인정해 주세요. 모든 걸 잘해야만 괜찮은 사람이 되는 건 아니에요.",
+    question: "요즘 자신에게 가장 자주 하는 말은 무엇인가요?"
+  },
+  "미래와 걱정": {
+    title: "아직 오지 않은 일들이 마음을 무겁게 하는군요.",
+    answer: "미래를 미리 걱정하는 건 그만큼 잘해내고 싶은 마음이 있기 때문일 수 있어요. 하지만 아직 일어나지 않은 일까지 전부 감당하려 하면 지금의 나도 지치게 돼요. 오늘 내가 할 수 있는 한 가지에 먼저 집중해 봐요.",
+    question: "지금 가장 걱정되는 미래의 일은 무엇인가요?"
+  },
+  "마음이 지친 날": {
+    title: "오늘은 마음이 조금 쉬어 가도 괜찮아요.",
+    answer: "계속 괜찮은 척하고 버티다 보면 내가 얼마나 지쳤는지도 놓치기 쉬워요. 당장 해결책을 찾지 않아도 괜찮아요. 힘들었다는 사실을 인정하고 잠깐 쉬는 것도 필요한 일이에요.",
+    question: "오늘 내 마음을 가장 지치게 한 일은 무엇이었나요?"
+  },
+  "그냥 이야기하고 싶어요": {
+    title: "무슨 이야기든 편하게 시작해 봐요.",
+    answer: "꼭 큰 고민이 있어야 이야기할 수 있는 건 아니에요. 별일 아닌 것 같은 이야기부터 말로 꺼내기 어려웠던 마음까지, 지금 떠오르는 것부터 천천히 정리해 봐요.",
+    question: "오늘 있었던 일 중 누군가에게 들려주고 싶은 이야기가 있나요?"
+  }
+};
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    const keyword = button.textContent
+      .replace(/^[^\s가-힣]+ /, "")
+      .trim();
+
+    const result = answers[keyword];
+
+    if (!result) return;
+
+    const main = document.querySelector("main");
+
+    main.innerHTML = `
+      <div class="ornament">✿ ❀ ✿</div>
+      <p class="eyebrow">보살 상담소 · 마음 이야기</p>
+      <h1><span>${result.title}</span></h1>
+      <p class="description">${result.answer}</p>
+      <div style="background:#fffaf5;padding:22px;border-radius:16px;text-align:left;line-height:1.8;margin:25px 0;">
+        <strong>조금 더 생각해 볼 질문</strong>
+        <p>${result.question}</p>
+      </div>
+      <button id="back-topics">다른 키워드 보기</button>
+    `;
+
+    document.getElementById("back-topics").addEventListener("click", function() {
+      location.reload();
+    });
+  });
+});
+
+</script>
+</body>
+</html>
